@@ -13,10 +13,24 @@ insert into Employee_details values
 
 select * from Employee_details;
 /*
--- ************* stored Procedure **************
--- Stored procedure is a set of SQL statements with an assigned name, 
--- which are stored in a relational database management system as a group,
--- so it can reuse and shared by multiple programs.  
+-- ************* stored Procedure **************  
+i)  Performance Optimization
+        Stored procedures are precompiled and cached by SQL Server, which means they execute faster than ad-hoc queries.
+        Execution plans are reused, saving time on parsing and optimizing queries repeatedly.
+ii) Code Reusability and Modularity
+    You can write a piece of SQL logic once in a stored procedure and reuse it wherever needed.
+    It helps in modularizing your code, making large applications easier to manage and update.
+iii) Security and Access Control
+       Stored procedures allow you to restrict direct access to the tables.
+       You can grant permissions to execute a stored procedure without giving access to the underlying tables.
+iV)  Reduced Network Traffic
+        Instead of sending multiple SQL statements over the network, a stored procedure call reduces round trips 
+         and data transfer, especially with complex operations.
+v)    Error Handling and Control
+         Stored procedures support TRY...CATCH blocks, so you can include error handling directly in the procedure logic.
+
+vi)   Support for Complex Business Logic
+          You can include loops, conditions (IF, WHILE), and even call other procedures or functions within a stored procedure.
 */
 create procedure spGetEmployee
 as
