@@ -1,10 +1,11 @@
-﻿Employees;
-department;
+﻿select * from Employees;
+select * from department;
 insert into Employees values('Tanveer Shaikh', 44000,'India','tanveeralam@gmail.com', GETDATE(), 3);
 insert into Employees values('Neha Pandey', 74000,'India','pandey@gmail.com', GETDATE(), 5);
 
 
 -- remove duplicate rows
+--get unique values
 select distinct FirstName, LastName from Employee;
 
 -- remove duplicate column
@@ -122,27 +123,27 @@ No partial dependency (i.e., no attribute depends on part of a composite primary
 
 	                                                    Before Normalization:
 		  StudentID | Name  | Course     | Instructor
---------------------------------------------
-1         | John  | SQL        | Mr. Shah
-1         | John  | Java       | Mr. Mehta
+           --------------------------------------------
+           1         | John  | SQL        | Mr. Shah
+           1         | John  | Java       | Mr. Mehta
 
                                                          After Normalization:
                      Students Table:    [🔹 1NF – First Normal Form]
 					 StudentID | Name
--------------------
-1         | John
+                     -------------------
+                      1         | John
 
                                        Courses Table:      [🔹 2NF – Second Normal Form]
 					CourseID | Course     | Instructor
--------------------------------
-101      | SQL        | Mr. Shah
-102      | Java       | Mr. Mehta
+                       -------------------------------
+                     101      | SQL        | Mr. Shah
+                     102      | Java       | Mr. Mehta
  
                                           StudentCourses Table:  [🔹 3NF – Third Normal Form]
          StudentID | CourseID
----------------------
-1         | 101
-1         | 102
+          ---------------------
+           1         | 101
+           1         | 102
 
 */
 
